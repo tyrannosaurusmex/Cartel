@@ -23985,13 +23985,7 @@
 	        }
 	    }, {
 	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'p',
-	                null,
-	                this.props.user.name
-	            );
-	        }
+	        value: function render() {}
 	    }]);
 
 	    return Layout;

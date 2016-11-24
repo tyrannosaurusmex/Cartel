@@ -3,7 +3,7 @@ module.exports = {
         './predist/js/app.js'
     ],
     output: {
-        path: './dist/public/js',
+        path: './public/js',
         filename: 'bundle.js'
     },
     module: {

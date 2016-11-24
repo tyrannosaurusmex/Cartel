@@ -3,23 +3,14 @@ module.exports = function(grunt) {
     grunt.initConfig({
         // Compilation Tools
         sass: {
-            dev: {
+            default: {
                 options: {
                     outputStyle: 'expanded'
                 },
                 files: {
-                    'dist/public/css/app.css': 'assets/app.scss'
+                    'public/css/app.css': 'predist/scss/app.scss'
                 }
             },
-            prod: {
-                options: {
-                    outputStyle: 'compressed',
-                    sourcemap: 'none'
-                },
-                files: {
-                    'dist/public/css/app.min.css': 'assets/app.scss'
-                }
-            }
         },
 
         express: {
