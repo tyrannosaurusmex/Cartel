@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Cartel
 Ecommerce Template
 
