@@ -1,6 +1,6 @@
 module.exports = {
     entry: [
-        './assets/js/app.js'
+        './predist/js/app.js'
     ],
     output: {
         path: './dist/public/js',
