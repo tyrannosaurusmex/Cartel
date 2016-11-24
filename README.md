@@ -1,4 +1,6 @@
-# Burrito
+<<<<<<< HEAD
+# Cartel
+Ecommerce Template
 
 *How to Set Up Server Side JS*:
 - `npm install`
@@ -14,7 +16,3 @@
 - `webpack`
 
 /assets/js/src -> /assets/js/dist
-
-
-*TODO*
-- Remove all JS stuff from grunt other than linting.
