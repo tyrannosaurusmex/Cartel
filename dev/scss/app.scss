@@ -1,5 +1,28 @@
-@import 'components/breadcrumb';
-@import 'components/footer';
-@import 'components/header';
+//Fonts
+@font-face {
+    font-family: fontDefaultLight;
+    src: url('/public/fonts/castletype_-_carisma-light-webfont.woff');
+}
+@font-face {
+    font-family: fontDefaultRegular;
+    src: url('/public/fonts/castletype_-_carisma-regular-webfont.woff');
+}
 
-@import 'elements/buttons';
+
+// Libraries
+@import 'lib/bourbon/bourbon';
+
+// Settings
+@import 'settings/colours';
+@import 'settings/dimensions';
+@import 'settings/effects';
+@import 'settings/fonts';
+@import 'settings/global';
+
+// Elements
+@import 'elements/body';
+@import 'elements/main';
+
+// Components
+@import 'components/FlexList';
+@import 'components/Nav';

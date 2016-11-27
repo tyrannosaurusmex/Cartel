@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                     outputStyle: 'expanded'
                 },
                 files: {
-                    'public/css/app.css': 'predist/scss/app.scss'
+                    'dist/public/css/app.css': 'dev/scss/app.scss'
                 }
             },
         },
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         // Linting Tools
         scsslint: {
             allFiles: [
-                'assets/scss/**/*.scss'
+                'dev/scss/**/*.scss'
             ],
             options: {
                 colorizeOutput: true,
@@ -98,7 +98,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-scss-lint');
     
     // Grunt Tasks
-    grunt.registerTask('build', [
+    grunt.registerTask('default', [
         'sass',
     ]);
 

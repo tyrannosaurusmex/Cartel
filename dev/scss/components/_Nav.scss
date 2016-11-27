@@ -1,0 +1,98 @@
+.Nav {
+    width: 220px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: $dark-grey;
+
+    .Nav_logo {
+        background: $mid-dark-grey;
+    }
+
+    .Nav_menu {
+        position: relative;
+
+        .Nav_menu_item {
+            list-style-type: none;
+            padding: $dim-std 0 $dim-std $dim-std-large;
+            color: $light-grey;
+            text-transform: uppercase;
+            line-height: 22px;
+            cursor: pointer;
+            @include transition(color $ani-std ease-in);
+
+            &:hover {
+                color: lighten($light-grey, 30%);
+                @include transition(color $ani-std ease-out);
+            }
+        }
+    }
+
+    .Nav_social {
+        width: 100%;
+        margin-bottom: $dim-std-small;
+        padding: $dim-std-small 0;
+        position: absolute;
+        bottom: -200px;
+        background: $mid-dark-grey;
+        z-index: 1;
+        @include transition(bottom $ani-std ease-in);
+    
+        &.Nav_social-active {
+            bottom: 60px;
+            @include transition(bottom $ani-std ease-out);
+        }
+
+        .Nav_social_item {
+            list-style-type: none;
+            color: $light-grey;
+            text-transform: uppercase;
+            padding: $dim-std-small 0 $dim-std-small $dim-std-large;
+        }
+    }
+
+    .Nav_currLangOptions {
+        width: 100%;
+        margin-bottom: $dim-std-small;
+        padding: $dim-std-small 0;
+        position: absolute;
+        bottom: -200px;
+        background: $mid-dark-grey;
+        z-index: 1;
+        @include transition(bottom $ani-std ease-in);
+    
+        &.Nav_currLangOptions-active {
+            bottom: 60px;
+            @include transition(bottom $ani-std ease-out);
+        }
+    }
+
+    .Nav_options {
+        position: absolute;
+        bottom: 0;
+        border-collapse:separate;
+        border-spacing: $dim-std-small;
+        background: inherit;
+        z-index: 2;
+
+        .Nav_options_item {
+            padding: $dim-std-small;
+            border: 1px solid $mid-light-grey;
+            list-style-type: none;
+            color: $light-grey;
+            @include transition(all $ani-std ease-in);
+
+            &:hover {
+                cursor: pointer;
+                border: 1px solid lighten($mid-light-grey, 30%);
+                color: lighten($light-grey, 30%);
+                @include transition(all $ani-std ease-out);
+            }
+
+            &.Nav_options_item-active {
+                border: 1px solid lighten($mid-light-grey, 30%);
+                color: lighten($light-grey, 30%);
+            }
+        }
+    }
+}

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 
 <html>
-    {{> global/globalHead}}
+    {{> global/head}}
     <body>
         {{> global/header}}
 
-        {{> global/breadcrumb}}
+        {{> global/nav}}
 
-        {{{body}}}
+        <main>
+            {{{body}}}
+        </main>
 
         {{> global/footer}}
+        {{> global/footer_scripts}}
     </body>
 </html>

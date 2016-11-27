@@ -6,6 +6,7 @@ import handlebars from 'express-handlebars';
 
 // Set directory for static assets
 app.use('/public', express.static(__dirname + '/public'));
+console.log(__dirname + '/public');
 
 // Set Handlebars as templating engine
 app.set('view engine', 'handlebars');

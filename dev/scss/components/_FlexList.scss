@@ -1,0 +1,10 @@
+.FlexList {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+    .FlexList_item {
+        display: table-cell !important;
+        text-align: center;
+    }
+}

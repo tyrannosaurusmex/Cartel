@@ -1,9 +1,9 @@
 module.exports = {
     entry: [
-        './predist/js/app.js'
+        './dev/js/app.js'
     ],
     output: {
-        path: './public/js',
+        path: './dist/public/js',
         filename: 'bundle.js'
     },
     module: {
