@@ -27,14 +27,14 @@ export default class ClassToggler {
     }
 
     removeClass() {
-        if (this.triggerToggle.length) {
-            this.triggerDOM.classList.remove(this.triggerToggle);
-        }
-        
         let isDescendant = salsa.checkIfDescendant(this.targetDOM, event.target);
 
         if(event.target !== this.triggerDOM && event.target !== this.targetDOM && !isDescendant) {
            this.targetDOM.classList.remove(this.targetToggle);
+
+            if (this.triggerToggle.length) {
+                this.triggerDOM.classList.remove(this.triggerToggle);
+            }
         }  
 
     }
