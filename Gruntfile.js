@@ -31,6 +31,14 @@ module.exports = function(grunt) {
             }
         },
 
+        copy: {
+            main: {
+                files: [
+                    { expand: true, flatten: true, src: ['dev/fonts/*'], dest: 'dist/public/fonts',  filter: 'isFile' },
+                ]
+            }
+        },
+
         // Linting Tools
         scsslint: {
             allFiles: [
@@ -96,10 +104,15 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-scss-lint');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     
     // Grunt Tasks
     grunt.registerTask('default', [
         'sass',
+    ]);
+
+    grunt.registerTask('public', [
+        'copy'
     ]);
 
     grunt.registerTask('lint', [
