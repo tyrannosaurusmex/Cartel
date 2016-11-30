@@ -5,10 +5,9 @@
 
     <ul class="Nav_menu">
         <li class="Nav_menu_item">Home</li>
-        <li class="Nav_menu_item">Account</li>
+        <li class="Nav_menu_item">Departments</li>
         <li class="Nav_menu_item">Favourites</li>
         <li class="Nav_menu_item">Vouchers</li>
-        <li class="Nav_menu_item">Sign Out</li>
     </ul>
 
     <ul class="Nav_social" id="NavSocial-target">
@@ -18,7 +17,15 @@
     </ul>
 
     <div class="Nav_currLangOptions" id="NavCurrLangOptions-target">
-        Hello
+        <div class="PsuedoSelector PsuedoSelector-actionUp PsuedoSelector--active" id="CurrencyPsuedoSelecter">
+            <ul class="PsuedoSelector PsuedoSelector_list">
+                <span id="CurrencyPsuedoSelecter-selected" class="PsuedoSelector_list_selected">GBP £</span>
+                <li class="PsuedoSelector_list_item PsuedoSelector_list_item--selected" data-psuedo-selector="gbp">GBP £</li>
+                <li class="PsuedoSelector_list_item" data-psuedo-selector="eur">EUR €</li>
+                <li class="PsuedoSelector_list_item" data-psuedo-selector="usd">USD $</li>
+            </ul>
+            <input type="hidden" value="" id="CurrencyPsuedoSelecter-value">
+        </div>
     </div>
 
     <ul class="Nav_options FlexList">
