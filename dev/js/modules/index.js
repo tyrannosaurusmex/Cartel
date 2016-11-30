@@ -25,4 +25,6 @@ let NavSocial = new ClassToggler({
     outsideClear: true
 });
 
+// Remove these and place in module file
+
 export { NavSocial, NavCurrLangOptions }
