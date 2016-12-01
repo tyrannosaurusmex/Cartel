@@ -1,0 +1,18 @@
+{
+    "currency": {
+        "availableCurrencies": [
+            "gbp",
+            "usd",
+            "eur"
+        ]
+    },
+
+    "language": {
+        "availableLanguages": [
+            "en",
+            "es",
+            "fr",
+            "de"
+        ]
+    }
+}

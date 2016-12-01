@@ -3,7 +3,7 @@
  import { createStore } from 'redux';
  import { Provider } from 'react-redux';
 
- import Layout from './components/Layout';
+ import PsuedoSelector from './components/PsuedoSelector';
  import store from './store';
 
  import modules from './modules/index.js';
