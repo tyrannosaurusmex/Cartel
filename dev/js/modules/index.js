@@ -1,5 +1,4 @@
 import ClassToggler from './ClassToggler';
-import StoreConfig from './StoreConfig';
 
 // Class Toggler Initialise
 /*
