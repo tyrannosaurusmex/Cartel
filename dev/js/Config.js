@@ -1,4 +1,4 @@
-export default class Config {
+class Config {
     constructor() {
         this.config = {
             currency: {
@@ -30,3 +30,7 @@ export default class Config {
         return this.language.availableLanguages;
     }
 }
+
+let CartelConfig = new Config();
+
+export { CartelConfig };
