@@ -1,4 +1,4 @@
-class Config {
+export default class Config {
     constructor() {
         this.config = {
             currency: {
