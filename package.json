@@ -2,24 +2,14 @@
   "name": "cartel",
   "version": "1.0.0",
   "description": "Ecommerce Template",
-  "keywords": [
-    "boilerplate",
-    "framework",
-    "library",
-    "development",
-    "website",
-    "front-end",
-    "back-end",
-    "mexican cuisine"
-  ],
-  "homepage": "https://github.com/tyrannosaurusmex/Burrito",
+  "homepage": "https://github.com/tyrannosaurusmex/Cartel",
   "author": "Tyrannosaurus Mex",
   "contributors": [
     "Chris Daniells <chrisdaniells@gmail.com>",
     "Edmund Reed <esr360@live.com>"
   ],
   "bugs": {
-    "url": "https://github.com/tyrannosaurusmex/Burrito/issues"
+    "url": "https://github.com/tyrannosaurusmex/Cartel/issues"
   },
   "scripts": {
     "start": "node dist/server.js",

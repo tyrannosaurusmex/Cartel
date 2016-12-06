@@ -1,3 +1,3 @@
-import ClassToggler from './ClassToggler';
+import * as ClassToggler from './ClassToggler';
 
-export { ClassTogglerModules }
+export { ClassToggler }

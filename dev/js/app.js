@@ -1,16 +1,32 @@
- import React from 'react';
- import ReactDOM from 'react-dom';
- import { createStore } from 'redux';
- import { Provider } from 'react-redux';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import store from './store';
+import Config from './Config';
+import modules from './modules/index.js';
 
- import PsuedoSelector from './components/PsuedoSelector';
- import store from './store';
+const app = document.getElementById('CurrencyPsuedoSelecter');
+import CookieSelector from './components/CookieSelector';
 
- import modules from './modules/index.js';
+let data = {
+    gbp: {
+        value: "gbp",
+        display: "GBP £"
+    },
+    eur: {
+        value: "eur",
+        display: "EUR €"
+    },
+    usd: {
+        value: "usd",
+        display: "USD $"
+    }
+};
 
- const app = document.getElementById('app');
 
- /*ReactDOM.render(<Provider store={store}>
-    <Layout />
-</Provider>, app);
-*/
+
+ReactDOM.render(<CookieSelector selected={"gbp"} 
+                                options={data}
+                                class="testclass"
+                                id="idtest" />, app);

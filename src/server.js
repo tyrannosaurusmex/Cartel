@@ -2,11 +2,11 @@ import express from 'express';
 let app = express();
 
 import handlebars from 'express-handlebars';
+import Config from './Config';
 
 
 // Set directory for static assets
 app.use('/public', express.static(__dirname + '/public'));
-console.log(__dirname + '/public');
 
 // Set Handlebars as templating engine
 app.set('view engine', 'handlebars');
@@ -16,6 +16,8 @@ app.engine('handlebars', handlebars(
         defaultLayout: 'main'
     }
 ));
+// Set Config data in locals
+app.locals.config = Config.getConfig();
 
 // Controllers
 require('./controllers/defaultController.js')(app);
