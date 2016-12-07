@@ -1,33 +1,25 @@
-export function fetchUserOptions() {
-    // This will grab either a cookie, or if not set
-    // user data from API - should it come from larger
-    // initial API grab?
+import * as Salsa from '../library/salsa';
+import CookieHandler from '../modules/CookieHandler';
 
+let cookieHandler = new CookieHandler();
+
+export function fetchUserOptionsCurrency() {
     return {
-        type: "FETCH_USER_OPTIONS_FULFILLED",
+        type: "FETCH_USER_OPTIONS_CURRENCY",
         payload: {
-            currency: 'gbp',
-            language: 'en'
-        }
-    };
+            currency: cookieHandler.getUserOptionsCurrency()
+        } 
+    }
 }
 
 export function setUserOptionsCurrency(currency) {
-    // This will set cookie and update user prefs
-    // via API
+    cookieHandler.updateUserOptionsCurrency(currency);
+    cookieHandler.resetCookie();
 
     return {
         type: "SET_USER_OPTIONS_CURRENCY",
-        payload: currency
-    };
-}
-
-export function setUserOptionsLanguage(language) {
-    // This will set cookie and update user prefs
-    // via API
-    
-    return {
-        type: "SET_USER_OPTIONS_LANGUAGE",
-        payload: language
+        payload: {
+            currency: currency
+        }
     };
 }

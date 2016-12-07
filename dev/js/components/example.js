@@ -12,7 +12,7 @@ import * as userOptionsActions from '../actions/userOptionsActions';
 export default class PsuedoSelector extends React.Component {
     constructor(data) {
         super();
-        this.data = data;
+        this.props = data;
     }
     componentWillMount() {
         this.props.dispatch(userOptionsActions.fetchUserOptions());

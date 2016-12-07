@@ -1,6 +1,9 @@
 class Config {
     constructor() {
         this.config = {
+            site: {
+                name: 'Cartel'
+            },
             currency: {
                 availableCurrencies: {
                     gbp: {
@@ -32,6 +35,10 @@ class Config {
     // Returns Object
     getConfig() {
         return this.config;
+    }
+
+    getConfigSiteName() {
+        return this.config.site.name;
     }
 
     // Returns Array

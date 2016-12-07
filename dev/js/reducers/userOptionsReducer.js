@@ -10,33 +10,21 @@ export default function reducer(
     }, action) {
 
     switch(action.type) {
-        case "FETCH_USER_OPTIONS":
-            return {...state, fetching: true }
-            break;
-        case "FETCH_USER_OPTIONS_REJECTED":
-            return {...state, fetching: false, error: action.payload }
-            break;
-        case "FETCH_USER_OPTIONS_FULFILLED":
+        case "FETCH_USER_OPTIONS_CURRENCY":
             return {
                 ...state,
                 fetching: false,
                 fetched: true,
-                userOptions: action.payload
+                options: {
+                    ...state.options, currency: action.payload.currency
+                }
             }
             break;
         case "SET_USER_OPTIONS_CURRENCY":
             return {
                 ...state,
-                userOptions: {
-                    ...state.user, currency: action.payload
-                }
-            }
-            break;
-        case "SET_USER_OPTIONS_LANGUAGE":
-            return {
-                ...state,
-                userOptions: {
-                    ...state.user, language: action.payload
+                options: {
+                    ...state.options, currency: action.payload.currency
                 }
             }
             break;
