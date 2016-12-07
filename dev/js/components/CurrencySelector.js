@@ -14,13 +14,15 @@ export default class CurrencySelector extends React.Component {
     constructor(data) {
         super();
         this.props = data;
+        this.fetchSelectedCurrency();
+    }
+    fetchSelectedCurrency() {
         let userCurrency = this.props.dispatch(userOptionsActions.fetchUserOptionsCurrency());
         this.selectedCurrency = userCurrency.payload.currency;
     }
     change(event) {
         this.props.dispatch(userOptionsActions.setUserOptionsCurrency(event.target.value));
-        let userCurrency = this.props.dispatch(userOptionsActions.fetchUserOptionsCurrency());
-        this.selectedCurrency = userCurrency.payload.currency;
+        this.fetchSelectedCurrency();
     }
     render() {
         return <select id="CurrencySelector"
