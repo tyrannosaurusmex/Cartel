@@ -26,7 +26,7 @@ export default class CurrencySelector extends React.Component {
     }
     render() {
         return <div>
-                    <label className="Label">Currency:</label>
+                    <label className="u-color-lightgrey">Currency:</label>
                         <select id="CurrencySelector"
                             className="Selector"
                             onChange={this.change.bind(this)}

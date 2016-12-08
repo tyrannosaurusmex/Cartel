@@ -59,6 +59,7 @@
         bottom: -200px;
         background: $mid-dark-grey;
         z-index: 1;
+        text-align: center;
         @include transition(bottom $ani-std ease-in);
     
         &.Nav_currLangOptions-active {

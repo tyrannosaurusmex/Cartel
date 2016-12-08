@@ -12,4 +12,4 @@ import CurrencySelector from './components/CurrencySelector';
 
 ReactDOM.render(<Provider store={store}>
     <CurrencySelector />
-</Provider>, app)
+</Provider>, app);
