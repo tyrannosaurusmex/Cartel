@@ -21,7 +21,8 @@ export default class LanguageSelector extends React.Component {
         let availableLanguages = Config.getAvailableLanguages();
         for (let lang in availableLanguages) {
             if (availableLanguages.hasOwnProperty(lang)) {
-                this.languageList.push(<option value={availableLanguages[lang].code} key={availableLanguages[lang].code}>{availableLanguages[lang].name}</option>);
+                this.languageList.push(<option value={availableLanguages[lang].code} 
+                                                key={availableLanguages[lang].code}>{availableLanguages[lang].name}</option>);
             }
         }
     }
