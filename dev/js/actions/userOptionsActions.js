@@ -1,4 +1,3 @@
-import * as Salsa from '../library/salsa';
 import CookieHandler from '../modules/CookieHandler';
 
 let cookieHandler = new CookieHandler();
