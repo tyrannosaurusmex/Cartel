@@ -17,17 +17,33 @@ class Config {
                     usd: {
                         code: "usd",
                         symbol: "$"
+                    },
+                    jpy: {
+                        code: "jpy",
+                        symbol: '¥'
                     }
                 }
             },
 
             language: {
-                availableLanguages: [
-                    "en",
-                    "es",
-                    "fr",
-                    "de"
-                ]
+                availableLanguages: {
+                    en: {
+                        code: 'en',
+                        name: 'English'
+                    },
+                    fr: {
+                        code: 'fr',
+                        name: 'French'
+                    },
+                    es: {
+                        code: 'es',
+                        name: 'Spanish'
+                    },
+                    de: {
+                        code: 'de',
+                        name: 'German'
+                    }
+                }
             }
         }
     }
@@ -41,12 +57,12 @@ class Config {
         return this.config.site.name;
     }
 
-    // Returns Array
+    // Returns Object
     getAvailableCurrencies() {
         return this.config.currency.availableCurrencies;
     }
 
-    // Return Array
+    // Returns Object
     getAvailableLanguages() {
         return this.config.language.availableLanguages;
     }

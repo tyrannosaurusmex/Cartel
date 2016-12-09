@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import store from '../store';
+import Config from '../Config';
 
 import * as userOptionsActions from '../actions/userOptionsActions';
 
@@ -15,6 +16,15 @@ export default class CurrencySelector extends React.Component {
         super();
         this.props = data;
         this.fetchSelectedCurrency();
+
+        this.currencyList = [];
+        let availableCurrencies = Config.getAvailableCurrencies();
+        for (let curr in availableCurrencies) {
+            if (availableCurrencies.hasOwnProperty(curr)) {
+                this.currencyList.push(<option value={availableCurrencies[curr].code} 
+                                                key={availableCurrencies[curr].code}>{availableCurrencies[curr].code.toUpperCase()} {availableCurrencies[curr].symbol}</option>);
+            }
+        }
     }
     fetchSelectedCurrency() {
         let userCurrency = this.props.dispatch(userOptionsActions.fetchUserOptionsCurrency());
@@ -31,9 +41,7 @@ export default class CurrencySelector extends React.Component {
                         className="Selector"
                         onChange={this.change.bind(this)}
                         value={this.selectedCurrency}>
-                            <option value="gbp">GBP £</option>
-                            <option value="eur">EUR €</option>
-                            <option value="usd">USD $</option>
+                            {this.currencyList}
                     </select>
                 </div>
             

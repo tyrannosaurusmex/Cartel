@@ -1,11 +1,12 @@
+import CookieHandler from '../modules/CookieHandler';
+const cookieHandler = new CookieHandler;
+
 export default function reducer(
     state = {
         options: {
-            currency: 'gbp',
-            language: 'en',
+            currency: cookieHandler.getUserOptionsCurrency(),
+            language: cookieHandler.getUserOptionsLanguage()
         },
-        fetching: false,
-        fetched: false,
         error: null
     }, action) {
 
@@ -13,8 +14,6 @@ export default function reducer(
         case "FETCH_USER_OPTIONS_CURRENCY":
             return {
                 ...state,
-                fetching: false,
-                fetched: true,
                 options: {
                     ...state.options, currency: action.payload.currency
                 }
@@ -31,8 +30,6 @@ export default function reducer(
         case "FETCH_USER_OPTIONS_LANGUAGE":
             return {
                 ...state,
-                fetching: false,
-                fetched: true,
                 options: {
                     ...state.options, language: action.payload.language
                 }

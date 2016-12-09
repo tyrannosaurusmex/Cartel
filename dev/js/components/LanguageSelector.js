@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import store from '../store';
+import Config from '../Config';
 
 import * as userOptionsActions from '../actions/userOptionsActions';
 
@@ -15,6 +16,14 @@ export default class LanguageSelector extends React.Component {
         super();
         this.props = data;
         this.fetchSelectedLanguage();
+
+        this.languageList = [];
+        let availableLanguages = Config.getAvailableLanguages();
+        for (let lang in availableLanguages) {
+            if (availableLanguages.hasOwnProperty(lang)) {
+                this.languageList.push(<option value={availableLanguages[lang].code} key={availableLanguages[lang].code}>{availableLanguages[lang].name}</option>);
+            }
+        }
     }
     fetchSelectedLanguage() {
         let userLanguage = this.props.dispatch(userOptionsActions.fetchUserOptionsLanguage());
@@ -31,9 +40,7 @@ export default class LanguageSelector extends React.Component {
                         className="Selector"
                         onChange={this.change.bind(this)}
                         value={this.selectedLanguage}>
-                            <option value="en">English</option>
-                            <option value="fr">French</option>
-                            <option value="es">Spanish</option>
+                            {this.languageList}
                     </select>
                 </div>
             
