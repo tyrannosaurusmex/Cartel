@@ -28,6 +28,24 @@ export default function reducer(
                 }
             }
             break;
+        case "FETCH_USER_OPTIONS_LANGUAGE":
+            return {
+                ...state,
+                fetching: false,
+                fetched: true,
+                options: {
+                    ...state.options, language: action.payload.language
+                }
+            }
+            break;
+        case "SET_USER_OPTIONS_LANGUAGE":
+            return {
+                ...state,
+                options: {
+                    ...state.options, language: action.payload.language
+                }
+            }
+            break;
     }
 
     return state;

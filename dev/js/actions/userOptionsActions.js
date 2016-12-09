@@ -23,3 +23,24 @@ export function setUserOptionsCurrency(currency) {
         }
     };
 }
+
+export function fetchUserOptionsLanguage() {
+    return {
+        type: "FETCH_USER_OPTIONS_LANGUAGE",
+        payload: {
+            language: cookieHandler.getUserOptionsLanguage()
+        } 
+    }
+}
+
+export function setUserOptionsLanguage(language) {
+    cookieHandler.updateUserOptionsLanguage(language);
+    cookieHandler.resetCookie();
+
+    return {
+        type: "SET_USER_OPTIONS_LANGUAGE",
+        payload: {
+            language: language
+        }
+    };
+}

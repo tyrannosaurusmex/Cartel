@@ -7,9 +7,15 @@ import store from './store';
 import Config from './Config';
 import modules from './modules/index.js';
 
-const app = document.getElementById('CurrencySelector');
 import CurrencySelector from './components/CurrencySelector';
+import LanguageSelector from './components/LanguageSelector';
 
+const currencySelectorDOM = document.getElementById('CurrencySelector');
 ReactDOM.render(<Provider store={store}>
     <CurrencySelector />
-</Provider>, app);
+</Provider>, currencySelectorDOM);
+
+const languageSelectorDOM = document.getElementById('LanguageSelector');
+ReactDOM.render(<Provider store={store}>
+    <LanguageSelector />
+</Provider>, languageSelectorDOM);

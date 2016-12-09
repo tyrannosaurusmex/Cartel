@@ -25,17 +25,17 @@ export default class CurrencySelector extends React.Component {
         this.fetchSelectedCurrency();
     }
     render() {
-        return <div>
-                    <label className="u-color-lightgrey">Currency:</label>
-                        <select id="CurrencySelector"
-                            className="Selector"
-                            onChange={this.change.bind(this)}
-                            value={this.selectedCurrency}>
-                                <option value="gbp">GBP £</option>
-                                <option value="eur">EUR €</option>
-                                <option value="usd">USD $</option>
-                        </select>
-                    </div>
+        return <div className="u-push-bot-small">
+        <label className="u-color-lightgrey">Currency:</label>
+                    <select id="CurrencySelector"
+                        className="Selector"
+                        onChange={this.change.bind(this)}
+                        value={this.selectedCurrency}>
+                            <option value="gbp">GBP £</option>
+                            <option value="eur">EUR €</option>
+                            <option value="usd">USD $</option>
+                    </select>
+                </div>
             
     }
 }

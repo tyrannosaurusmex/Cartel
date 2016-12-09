@@ -39,4 +39,14 @@ export default class CookieHandler {
         this.cookieObject.userOptions.currency = currency;
         this.resetCookie();
     }
+    getUserOptionsLanguage() {
+        if (!this.cookieObject.userOptions.language.length) {
+            this.cookieObject.userOptions.language = CookieTemplate.userOptions.language;
+        }
+        return this.cookieObject.userOptions.language;
+    }
+    updateUserOptionsLanguage(language) {
+        this.cookieObject.userOptions.language = language;
+        this.resetCookie();
+    }
 }
