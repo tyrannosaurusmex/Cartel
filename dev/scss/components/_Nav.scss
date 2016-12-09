@@ -7,6 +7,11 @@
 
     .Nav_logo {
         background: $mid-dark-grey;
+        padding: $dim-std-large;
+
+        .Nav_logo_img {
+            width: 100%;
+        }
     }
 
     .Nav_menu {

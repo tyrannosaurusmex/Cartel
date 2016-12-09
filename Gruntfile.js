@@ -36,6 +36,11 @@ module.exports = function(grunt) {
                 files: [
                     { expand: true, flatten: true, src: ['dev/fonts/*'], dest: 'dist/public/fonts',  filter: 'isFile' },
                 ]
+            },
+            images: {
+                files: [
+                    { expand: true, flatten: true, src: ['dev/images/*'], dest: 'dist/public/images',  filter: 'isFile' },
+                ]
             }
         },
 
