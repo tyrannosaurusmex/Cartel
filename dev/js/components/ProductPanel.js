@@ -13,9 +13,8 @@ export default class ProductPanel extends React.Component {
     constructor(data) {
         this.props = data;
 
-        this.userCurrency = CookieHandler.getUserOptionsCurrency();
-        this.currPrice = ProductHandler.getPriceByCurrency(this.userCurrency);
-        this.currSymbol = ProductHandler.getSymbolByCurrency(this.userCurrency);
+        this.currPrice = ProductHandler.getPriceByCurrency(this.props.userCurrency);
+        this.currSymbol = ProductHandler.getSymbolByCurrency(this.props.userCurrency);
     }
     render() {
         <div class="ProductPanel">
