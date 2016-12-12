@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 import Config from './Config';
-import modules from './modules/index.js';
 
-import CurrencySelector from './components/CurrencySelector';
-import LanguageSelector from './components/LanguageSelector';
+import * as ClassToggler from './modules/ClassToggler';
+
+import CurrencySelector from './bundles/UserOptions/components/CurrencySelector';
+import LanguageSelector from './bundles/UserOptions/components/LanguageSelector';
 
 const currencySelectorDOM = document.getElementById('CurrencySelector');
 ReactDOM.render(<Provider store={store}>

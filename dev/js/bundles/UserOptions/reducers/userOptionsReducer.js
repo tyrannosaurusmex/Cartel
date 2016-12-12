@@ -1,4 +1,4 @@
-import CookieHandler from '../modules/CookieHandler';
+import CookieHandler from '../../../modules/CookieHandler';
 const cookieHandler = new CookieHandler;
 
 export default function reducer(
