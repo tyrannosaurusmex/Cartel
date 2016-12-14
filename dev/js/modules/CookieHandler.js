@@ -7,28 +7,19 @@ export default class CookieHandler {
         this.cookieObject = {};
 
         if(Salsa.getCookie(Config.getConfigSiteName()).length) {
-            this.fetchExistingCookie();
+            let freshCookie = Salsa.getCookie(Config.getConfigSiteName());
+            this.cookieObject = JSON.parse(freshCookie); 
         } else {
-            this.createNewCookie();
+            this.cookieObject = CookieTemplate;
         }
 
         this.resetCookie();
-    }
-    fetchExistingCookie() {
-        let freshCookie = Salsa.getCookie(Config.getConfigSiteName());
-        this.cookieObject = JSON.parse(freshCookie); 
-    }
-    createNewCookie() {
-        this.cookieObject = CookieTemplate;
     }
     resetCookie() {
         Salsa.setCookie(Config.getConfigSiteName(), JSON.stringify(this.cookieObject), 30);
     }
 
     // External get/update Functions
-    getCookieObject() {
-        return this.cookieObject;
-    }
     getUserOptionsCurrency() {
         if (!this.cookieObject.userOptions.currency.length) {
             this.cookieObject.userOptions.currency = CookieTemplate.userOptions.currency;
