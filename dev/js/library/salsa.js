@@ -30,3 +30,7 @@ export function getCookie(cname) {
     }
     return "";
 }
+
+export function randomNumberRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}

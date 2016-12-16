@@ -22,11 +22,15 @@ for(var i=0; i != 10; i++) {
     var albumTitle = generateAlbumTitle(firstTitle, middleTitle, secondTitle);
     var price = generatePrice();
     var genre = generateGenre(genres);
+    var releaseDate = Math.floor(Math.random() * (2018 - 1990 + 1)) + 1990;
+    var label = generateMusicLabel(firstTitle, middleTitle);
 
     console.log('Artist: ' + artistTitle);
     console.log('Album: ' + albumTitle); 
     console.log(price);
     console.log('Genre: ' + genre);
+    console.log('Release Date:' + releaseDate);
+    console.log('Label: ' + label);
     console.log('______________');
 }
 
@@ -68,4 +72,11 @@ function generatePrice() {
 
 function generateGenre(genres) {
     return genres[Math.floor((Math.random() * genres.length) + 0)];
+}
+
+function generateMusicLabel(firstTitle, middleTitle) {
+    var firstTitleNum = Math.floor((Math.random() * firstTitle.length) + 0);
+    var middleTitleNum = Math.floor((Math.random() * middleTitle.length) + 0);
+
+    return middleTitle[middleTitleNum] + ' ' + firstTitle[firstTitleNum];
 }
