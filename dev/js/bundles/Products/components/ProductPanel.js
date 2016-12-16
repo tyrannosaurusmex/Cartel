@@ -23,7 +23,7 @@ export default class ProductPanel extends React.Component {
                     className="ProductPanel_image" />
             <p className="ProductPanel_title">{this.props.title}</p>
             <p className="ProductPanel_price">{this.currSymbol}{this.currPrice}</p>
-            <span class="Button">View</span>"
+            <span class="Button">View</span>
         </div>
     }
 }
