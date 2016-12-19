@@ -1,9 +1,10 @@
 .Nav {
     width: 220px;
     height: 100%;
-    position: relative;
+    position: fixed;
     overflow: hidden;
     background: $dark-grey;
+    z-index: 100;
 
     .Nav_logo {
         padding: $dim-std-large;
@@ -21,11 +22,13 @@
             padding: $dim-std 0 $dim-std $dim-std-large;
             color: $light-grey;
             text-transform: uppercase;
+            display: block;
             line-height: 22px;
             cursor: pointer;
+            text-decoration: none;
             @include transition(color $ani-std ease-in);
 
-            &:hover {
+            &:hover, &.Nav_menu_item-active {
                 color: lighten($light-grey, 30%);
                 @include transition(color $ani-std ease-out);
             }
@@ -39,7 +42,7 @@
         position: absolute;
         bottom: -200px;
         background: $mid-dark-grey;
-        z-index: 1;
+        z-index: 101;
         @include transition(bottom $ani-std ease-in);
     
         &.Nav_social-active {
@@ -62,7 +65,7 @@
         position: absolute;
         bottom: -200px;
         background: $mid-dark-grey;
-        z-index: 1;
+        z-index: 101;
         text-align: center;
         @include transition(bottom $ani-std ease-in);
     
@@ -78,13 +81,14 @@
         border-collapse:separate;
         border-spacing: $dim-std-small;
         background: inherit;
-        z-index: 2;
+        z-index: 102;
 
         .Nav_options_item {
             padding: $dim-std-small;
             border: 1px solid $mid-light-grey;
             list-style-type: none;
             color: $light-grey;
+            text-decoration: none;
             @include transition(all $ani-std ease-in);
 
             &:hover {

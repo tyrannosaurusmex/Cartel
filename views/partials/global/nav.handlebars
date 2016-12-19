@@ -5,7 +5,7 @@
 
     <ul class="Nav_menu">
         <li class="Nav_menu_item">Home</li>
-        <li class="Nav_menu_item">Departments</li>
+        <a href="/departments/" class="Nav_menu_item" id="MegaMenu-trigger">Departments</a>
         <li class="Nav_menu_item">Favourites</li>
         <li class="Nav_menu_item">Vouchers</li>
     </ul>
@@ -23,8 +23,16 @@
         </div>
     </div>
 
-    <ul class="Nav_options FlexList">
-        <li class="Nav_options_item FlexList_item" id="NavSocial-trigger">Social</li>
-        <li class="Nav_options_item FlexList_item" id="NavCurrLangOptions-trigger">Curr/Lang</li>
-    </ul>
+    <div class="Nav_options FlexList">
+        <a href="/myaccount/social"
+            class="Nav_options_item FlexList_item" 
+            id="NavSocial-trigger">Social</a>
+        <a href="/myaccount/useroptions" 
+            class="Nav_options_item FlexList_item" 
+            id="NavCurrLangOptions-trigger">Curr/Lang</a>
+    </div>
 </nav>
+
+<div class="MegaMenu" id="MegaMenu-target">
+    
+</div>

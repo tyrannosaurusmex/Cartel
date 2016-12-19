@@ -21,7 +21,8 @@ class ClassToggler {
         }
     }
 
-    toggleClass() {
+    toggleClass(event) {
+        event.preventDefault();
         if (this.triggerToggle.length) {
             this.triggerDOM.classList.toggle(this.triggerToggle);
         }
@@ -66,5 +67,13 @@ ClassTogglerModules.NavSocial = new ClassToggler({
     targetToggle: 'Nav_social-active',
     outsideClear: true
 });
+
+ClassTogglerModules.MegaMenu = new ClassToggler({
+    trigger: 'MegaMenu-trigger',
+    target: 'MegaMenu-target',
+    triggerToggle: 'Nav_menu_item-active',
+    targetToggle: 'MegaMenu-active',
+    outsideClear: true
+})
 
 export { ClassTogglerModules };

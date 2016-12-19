@@ -1,0 +1,14 @@
+.MegaMenu {
+    width: calc(100% - 220px);
+    height: 100%;
+    position: fixed;
+    left: -100%;
+    z-index: 99;
+    background: grey;
+    @include transition(left $ani-std ease-in);
+
+    &.MegaMenu-active {
+        left: 220px;
+        @include transition(left $ani-std ease-out);
+    }
+}
