@@ -16,6 +16,7 @@ var genres = [
     'rock', 'punk', 'metal', 'jazz', 'grunge'
 ]
 
+var obj  = [];
 // DATA GENERATION
 for(var i=0; i != 10; i++) {
     var artistTitle = generateArtistTitle(firstTitle, secondTitle);
@@ -25,15 +26,19 @@ for(var i=0; i != 10; i++) {
     var releaseDate = Math.floor(Math.random() * (2018 - 1990 + 1)) + 1990;
     var label = generateMusicLabel(firstTitle, middleTitle);
 
-    console.log('Artist: ' + artistTitle);
-    console.log('Album: ' + albumTitle); 
-    console.log(price);
-    console.log('Genre: ' + genre);
-    console.log('Release Date:' + releaseDate);
-    console.log('Label: ' + label);
-    console.log('______________');
+    var tmpObj = {
+        artist_title: artistTitle,
+        album_title: albumTitle,
+        price: price,
+        genre: genre,
+        release_date: releaseDate,
+        record_label: label
+    };
+
+    obj.push(tmpObj);
 }
 
+console.log(obj);
 
 // GENERATOR FUNCTIONS
 function generateArtistTitle(firstTitle, secondTitle) {
