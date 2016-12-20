@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 const PATHS = {
-    app: path.join(__dirname, './dev/js/app.js'),
+    app: path.join(__dirname, './src/public/js/app.js'),
     build: './dist/public/js'
 };
 

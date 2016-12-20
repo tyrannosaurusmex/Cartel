@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                     outputStyle: 'expanded'
                 },
                 files: {
-                    'dist/public/css/app.css': 'dev/scss/app.scss'
+                    'dist/public/css/app.css': 'src/public/scss/app.scss'
                 }
             },
         },
@@ -34,12 +34,12 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    { expand: true, flatten: true, src: ['dev/fonts/*'], dest: 'dist/public/fonts',  filter: 'isFile' },
+                    { expand: true, flatten: true, src: ['src/public/fonts/*'], dest: 'dist/public/fonts',  filter: 'isFile' },
                 ]
             },
             images: {
                 files: [
-                    { expand: true, flatten: true, src: ['dev/images/*'], dest: 'dist/public/images',  filter: 'isFile' },
+                    { expand: true, flatten: true, src: ['src/public/images/*'], dest: 'dist/public/images',  filter: 'isFile' },
                 ]
             }
         },
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
         // Linting Tools
         scsslint: {
             allFiles: [
-                'dev/scss/**/*.scss'
+                'src/pulic/scss/**/*.scss'
             ],
             options: {
                 colorizeOutput: true,
