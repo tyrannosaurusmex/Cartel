@@ -4,7 +4,7 @@
     position: fixed;
     left: -100%;
     z-index: 99;
-    background: grey;
+    background: $mid-dark-grey;
     @include transition(left $ani-std ease-in);
 
     &.MegaMenu-active {
