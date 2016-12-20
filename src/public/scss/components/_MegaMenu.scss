@@ -1,14 +1,47 @@
 .MegaMenu {
     width: calc(100% - 220px);
+    min-width: 700px;
     height: 100%;
     position: fixed;
     left: -100%;
     z-index: 99;
     background: $mid-dark-grey;
-    @include transition(left $ani-std ease-in);
+    color: $mid-dark-grey;
+    @include transition(left $ani-std ease-in, color 0.3s ease-in);
+
 
     &.MegaMenu-active {
         left: 220px;
-        @include transition(left $ani-std ease-out);
+        color: $white;
+        @include transition(left $ani-std ease-out, color 1.3s ease-out);
+
+    }
+
+    &.MegaMenu-col3 {
+        .MegaMenu_col {
+            width: (100% / 3);
+        }
+    }
+    
+    .MegaMenu_col {
+        width: 100%;
+        height: 100%;
+        padding: $dim-std-large;
+        float: left;
+    }
+
+    .MegaMenu_heading {
+        padding-bottom: $dim-std-small;
+        margin-bottom: $dim-std;
+        border-bottom: 1px solid $mid-light-grey;
+        font-size: 20px;
+    }
+
+    .MegaMenu_list {
+        li {
+            list-style-type: none;
+            margin-bottom: $dim-std-small;
+            font-size: 16px;
+        }
     }
 }
