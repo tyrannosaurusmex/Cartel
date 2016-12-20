@@ -8,11 +8,17 @@ class ClassToggler {
         this.target = options.target;
         this.triggerDOM = document.getElementById(this.trigger);
         this.targetDOM = document.getElementById(this.target);
-        this.triggerToggle = options.triggerToggle;
+        this.triggerToggle = options.triggerToggle || '';
         this.targetToggle = options.targetToggle;
-        this.outsideClear = options.outsideClear;
+        this.outsideClear = options.outsideClear || false;
+        this.insideCloser = options.insideCloser || '';
+        this.insideCloserDOM = document.getElementById(this.insideCloser) || '';
 
         this.triggerDOM.addEventListener('click', this.toggleClass.bind(this), false);
+
+        if (this.insideCloser.length) {
+            this.insideCloserDOM.addEventListener('click', this.removeClass.bind(this), false);
+        }
 
         // Remove Class if outer DOM is clicked
         // Excludes targetDOM
@@ -30,7 +36,14 @@ class ClassToggler {
     }
 
     removeClass() {
-        let isDescendant = salsa.checkIfDescendant(this.targetDOM, event.target);
+        let isDescendant;
+        // Override isDescendant check if specified 'closer' DOM element
+        if (event.target !== this.insideCloserDOM) {
+            isDescendant = salsa.checkIfDescendant(this.targetDOM, event.target);
+        } else {
+            isDescendant =  false;
+        }
+        
 
         if(event.target !== this.triggerDOM && event.target !== this.targetDOM && !isDescendant) {
            this.targetDOM.classList.remove(this.targetToggle);
@@ -50,6 +63,7 @@ class ClassToggler {
     triggerToggle: class name to add to trigger element
     targetToggle: class name to add to the target element
     outsideClear: remove class on outside click (excluding target element)
+    insideCloser: Remove class on click of child element
 */
 
 ClassTogglerModules.NavCurrLangOptions = new ClassToggler({
@@ -73,7 +87,8 @@ ClassTogglerModules.MegaMenu = new ClassToggler({
     target: 'MegaMenu-target',
     triggerToggle: 'Nav_menu_item-active',
     targetToggle: 'MegaMenu-active',
-    outsideClear: true
+    outsideClear: true,
+    insideCloser: 'MegaMenu-closer'
 })
 
 export { ClassTogglerModules };

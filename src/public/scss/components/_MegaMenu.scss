@@ -13,7 +13,8 @@
     &.MegaMenu-active {
         left: 220px;
         color: $white;
-        @include transition(left $ani-std ease-out, color 1.3s ease-out);
+        transition-delay: 0.3s;
+        @include transition(left $ani-std ease-out, color 1s ease-out);
 
     }
 
@@ -23,6 +24,14 @@
         }
     }
     
+    .MegaMenu_closer {
+        display: block;
+        position: absolute;
+        right: $dim-std;
+        top: $dim-std;
+        cursor: pointer;
+    }
+
     .MegaMenu_col {
         width: 100%;
         height: 100%;
@@ -32,7 +41,7 @@
 
     .MegaMenu_heading {
         padding-bottom: $dim-std-small;
-        margin-bottom: $dim-std;
+        margin: $dim-std 0;
         border-bottom: 1px solid $mid-light-grey;
         font-size: 20px;
     }
@@ -42,6 +51,11 @@
             list-style-type: none;
             margin-bottom: $dim-std-small;
             font-size: 16px;
+
+            a {
+                color: inherit;
+                font-size: inherit;
+            }
         }
     }
 }
