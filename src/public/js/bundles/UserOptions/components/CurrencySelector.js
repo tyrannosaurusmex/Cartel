@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import store from '../../..//store';
+import store from '../../../store';
 import Config from '../../../Config';
 
 import * as userOptionsActions from '../actions/userOptionsActions';
