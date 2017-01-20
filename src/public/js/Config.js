@@ -2,7 +2,9 @@ class Config {
     constructor() {
         this.config = {
             site: {
-                name: 'Cartel'
+                name: 'Cartel',
+                url: 'http://localhost:3000',
+                api_url: 'http://localhost:3001'
             },
             currency: {
                 availableCurrencies: {
@@ -55,6 +57,14 @@ class Config {
 
     getConfigSiteName() {
         return this.config.site.name;
+    }
+    
+    getConfigSiteUrl() {
+        return this.config.site.url;
+    }
+
+    getConfigAPIUrl() {
+        return this.config.site.api_url;
     }
 
     // Returns Object

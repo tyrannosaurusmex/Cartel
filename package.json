@@ -16,6 +16,7 @@
     "build": "babel src -d dist --ignore src/public/**"
   },
   "devDependencies": {
+    "ajax-request": "^1.2.1",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",

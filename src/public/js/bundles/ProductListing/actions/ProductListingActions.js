@@ -1,13 +1,33 @@
+import Config from '../../../Config.js';
+import ajax from 'ajax-request';
+
 export function fetchProductListings() {
-    let url = 'http://localhost:3001/Cartel/products';
+    let url = Config.getConfigAPIUrl() + '/cartel/products';
 
-    let jsonRequest = new XMLHttpRequest;
-    jsonRequest.responseType = 'json';
-    jsonRequest.open('GET', url, true);
+    var productData;
+    function ajaxshit() {
+        let ajaxPromise = new Promise((resolve, reject) => 
+            {
+                ajax({
+                    url: url,
+                    method: 'GET',
+                }, (err, res, body) => {
+                    // Callback function
+                    resolve(err);
+                })
+            });
 
-    jsonRequest.send().then((data) => {
-        const productData = [1, 2];
-    });
+        ajaxPromise.then((val) => {
+            alert(val);
+        }).catch((reason) => {
+            alert(reason);
+        });
+    }
+
+    ajaxshit();
+    
+
+    alert(productData);
 
     return {
         type: "FETCH_PRODUCT_LISTINGS",
