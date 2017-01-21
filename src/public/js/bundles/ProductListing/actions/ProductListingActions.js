@@ -3,8 +3,8 @@ import store from '../../../store.js';
 import axios from 'axios';
 
 export function fetchProductListings() {
-    store.dispatch({
+    return {
         type: "FETCH_PRODUCT_LISTINGS",
         payload: axios.get(Config.getConfigAPIUrl() + '/cartel/products')
-    })
+    }
 }
