@@ -1,38 +1,10 @@
 import Config from '../../../Config.js';
-import ajax from 'ajax-request';
+import store from '../../../store.js';
+import axios from 'axios';
 
 export function fetchProductListings() {
-    let url = Config.getConfigAPIUrl() + '/cartel/products';
-
-    var productData;
-    function ajaxshit() {
-        let ajaxPromise = new Promise((resolve, reject) => 
-            {
-                ajax({
-                    url: url,
-                    method: 'GET',
-                }, (err, res, body) => {
-                    // Callback function
-                    resolve(err);
-                })
-            });
-
-        ajaxPromise.then((val) => {
-            alert(val);
-        }).catch((reason) => {
-            alert(reason);
-        });
-    }
-
-    ajaxshit();
-    
-
-    alert(productData);
-
-    return {
+    store.dispatch({
         type: "FETCH_PRODUCT_LISTINGS",
-        payload: {
-            products: productData
-        } 
-    }
+        payload: axios.get(Config.getConfigAPIUrl() + '/cartel/products')
+    })
 }
