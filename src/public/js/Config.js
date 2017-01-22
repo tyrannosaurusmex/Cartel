@@ -19,10 +19,6 @@ class Config {
                     usd: {
                         code: "usd",
                         symbol: "$"
-                    },
-                    jpy: {
-                        code: "jpy",
-                        symbol: '¥'
                     }
                 }
             },
