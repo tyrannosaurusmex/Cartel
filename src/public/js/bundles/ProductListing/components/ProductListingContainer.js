@@ -22,9 +22,10 @@ export default class ProductListingContainer extends React.Component {
         this.prodList = [];
 
         for (let prod in this.props.productListing) {
+            let product = this.props.productListing[prod];
             if (this.props.productListing.hasOwnProperty(prod)) {
-                let productHandler = new ProductHandler(this.props.productListing[prod]);
-                this.prodList.push(<div>{productHandler.getSymbolByCurrency(this.props.selectedCurrency)}{this.props.productListing[prod].price[this.props.selectedCurrency]}</div>)
+                let productHandler = new ProductHandler(product);
+                this.prodList.push(<div>{productHandler.getSymbolByCurrency(this.props.selectedCurrency)}{product.price[this.props.selectedCurrency]}</div>)
             }
         }
 
