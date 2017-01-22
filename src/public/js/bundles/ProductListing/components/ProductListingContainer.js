@@ -17,6 +17,13 @@ export default class ProductListingContainer extends React.Component {
         this.prodList = [];
 
         this.props.dispatch(ProductListingActions.fetchProductListings());
+
+        this.prods = this.props.productListing;
+        for (let prod in this.prods) {
+            if (this.prods.hasOwnProperty(prod)) {
+                this.prodList.push(<div>{this.prods[prod].artist_title}</div>)
+            }
+        }
     }
     render() {
         let prods = this.props.productListing;
