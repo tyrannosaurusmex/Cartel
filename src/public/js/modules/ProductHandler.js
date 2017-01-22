@@ -13,7 +13,7 @@ export default class ProductHandler {
     getSymbolByCurrency(currency) {
         let availableCurrencies = Config.getAvailableCurrencies();
 
-        for(curr in availableCurrencies) {
+        for(let curr in availableCurrencies) {
             if (availableCurrencies[curr].code == currency) {
                 return availableCurrencies[curr].symbol;
             }

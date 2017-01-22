@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import store from '../../../store';
+import ProductHandler from '../../../modules/ProductHandler';
 
 import * as ProductListingActions from '../actions/ProductListingActions';
 
@@ -15,14 +16,15 @@ export default class ProductListingContainer extends React.Component {
     constructor(data) {
         super();
         this.props = data;
-
         this.props.dispatch(ProductListingActions.fetchProductListings());
     }
     render() {
         this.prodList = [];
+
         for (let prod in this.props.productListing) {
             if (this.props.productListing.hasOwnProperty(prod)) {
-                this.prodList.push(<div>{this.props.productListing[prod].price[this.props.selectedCurrency]}</div>)
+                let productHandler = new ProductHandler(this.props.productListing[prod]);
+                this.prodList.push(<div>{productHandler.getSymbolByCurrency(this.props.selectedCurrency)}{this.props.productListing[prod].price[this.props.selectedCurrency]}</div>)
             }
         }
 
