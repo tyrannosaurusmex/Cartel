@@ -6,7 +6,8 @@ import * as ProductListingActions from '../actions/ProductListingActions';
 
 @connect((store) => {
     return {
-        productListing: store.productListing.products
+        productListing: store.productListing.products,
+        selectedCurrency: store.userOptions.currency
     }
 })
 
@@ -14,14 +15,13 @@ export default class ProductListingContainer extends React.Component {
     constructor(data) {
         super();
         this.props = data;
-        this.prodList = [];
 
+        this.prodList = [];
         this.props.dispatch(ProductListingActions.fetchProductListings());
 
-        this.prods = this.props.productListing;
-        for (let prod in this.prods) {
-            if (this.prods.hasOwnProperty(prod)) {
-                this.prodList.push(<div>{this.prods[prod].artist_title}</div>)
+        for (let prod in this.props.productListing) {
+            if (this.props.productListing.hasOwnProperty(prod)) {
+                this.prodList.push(<div>{this.props.productListing[prod].artist_title}</div>)
             }
         }
     }
