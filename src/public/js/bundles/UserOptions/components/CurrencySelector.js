@@ -7,7 +7,7 @@ import * as userOptionsActions from '../actions/userOptionsActions';
 
 @connect((store) => {
     return {
-        userOptions: store.userOptions.options.currency
+        selectedCurrency: store.userOptions.options.currency
     }
 })
 
@@ -15,7 +15,6 @@ export default class CurrencySelector extends React.Component {
     constructor(data) {
         super();
         this.props = data;
-        this.fetchSelectedCurrency();
 
         this.currencyList = [];
         let availableCurrencies = Config.getAvailableCurrencies();
@@ -26,13 +25,8 @@ export default class CurrencySelector extends React.Component {
             }
         }
     }
-    fetchSelectedCurrency() {
-        let userCurrency = this.props.dispatch(userOptionsActions.fetchUserOptionsCurrency());
-        this.selectedCurrency = userCurrency.payload.currency;
-    }
     change(event) {
         this.props.dispatch(userOptionsActions.setUserOptionsCurrency(event.target.value));
-        this.fetchSelectedCurrency();
     }
     render() {
         return <div className="u-push-bot-small">
@@ -40,7 +34,7 @@ export default class CurrencySelector extends React.Component {
                     <select id="CurrencySelector"
                         className="Selector"
                         onChange={this.change.bind(this)}
-                        value={this.selectedCurrency}>
+                        value={this.props.selectedCurrency}>
                             {this.currencyList}
                     </select>
                 </div>
