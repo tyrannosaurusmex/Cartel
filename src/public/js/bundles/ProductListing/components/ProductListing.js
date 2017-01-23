@@ -1,28 +1,24 @@
 import React from 'react';
 import { Connect } from 'react-redux';
-import store from '../store';
-import Config from '../Config';
+import store from '../../../store';
+import ProductHandler from '../../../modules/ProductHandler';
 
-import ProductPanel from './ProductPanel';
-
-import ProductHandler from '../modules/ProductHandler';
-import CookieHandler from '../modules/CookieHandler';
-
-const cookieHandler = new CookieHandler();
-
-export default class ProductListing extends React.component {
+export default class ProductListing extends React.Component {
     constructor(data) {
+        super(data);
         this.props = data;
-        this.userCurrency = CookieHandler.getUserOptionsCurrency();
-
-        this.ProductElements = [];
-        for(prod in this.props.products) {
-            ProductElements.push(<ProductPanel userCurrency={this.userCurrency} />)
-        }
     }
     render() {
-        return <div className="ProductListing">
-                    {this.ProductElements}
-                </div>
+        this.prodList = [];
+
+        for (let prod in this.props.productListing) {
+            let product = this.props.productListing[prod];
+            if (this.props.productListing.hasOwnProperty(prod)) {
+                let productHandler = new ProductHandler(product);
+                this.prodList.push(<div>{productHandler.getSymbolByCurrency(this.props.selectedCurrency)}{product.price[this.props.selectedCurrency]}</div>)
+            }
+        }
+        
+        return <div>{this.prodList}</div>
     }
 }

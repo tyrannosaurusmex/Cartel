@@ -1,5 +1,5 @@
 import * as Salsa from '../library/salsa';
-import CookieTemplate from '../CookieTemplate';
+import CookieTemplate from './CookieTemplate';
 import Config from '../Config';
 
 export default class CookieHandler {
