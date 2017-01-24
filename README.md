@@ -15,3 +15,10 @@ Ecommerce Template
 - `webpack`
 
 /assets/js/src -> /assets/js/dist
+
+
+# Tidyup
+- Add PropTypes to React Components
+- Create product listing URL convention
+- Rename productListing Component names, variables and action types etc.
+- Tidy up ProductListing component to use correct React lifecycle methods
