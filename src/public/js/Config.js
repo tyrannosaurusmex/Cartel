@@ -6,6 +6,19 @@ class Config {
                 url: 'http://localhost:3000',
                 api_url: 'http://localhost:3001'
             },
+            catalog: {
+                categories: [
+                    'music_release'
+                ],
+                filters: [
+                    'format',
+                    'genre',
+                    'artist'
+                ],
+                options: {
+                    products_per_page: 10
+                }
+            },
             currency: {
                 availableCurrencies: {
                     gbp: {
@@ -22,7 +35,6 @@ class Config {
                     }
                 }
             },
-
             language: {
                 availableLanguages: {
                     en: {
@@ -61,6 +73,10 @@ class Config {
 
     getConfigAPIUrl() {
         return this.config.site.api_url;
+    }
+
+    getConfigCatalogFilters() {
+        return this.config.catalog.filters;
     }
 
     // Returns Object

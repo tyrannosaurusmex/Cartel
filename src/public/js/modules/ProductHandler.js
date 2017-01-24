@@ -4,9 +4,9 @@ export default class ProductHandler {
     constructor(data) {
         this.data = data;
     }
-    getPriceByCurrecy(currency) {
-        if(this.data.price[currency].length) {
-            return this.data.price[currency];
+    getPriceByCurrecy(currency, variant = 0) {
+        if(this.data.variants[variant].price[currency].length) {
+            return this.data.variants[variant].price[currency];
         }
         return false;
     }

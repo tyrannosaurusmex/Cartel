@@ -14,7 +14,7 @@ export default class ProductListing extends React.Component {
             let product = this.props.productListing[prod];
             if (this.props.productListing.hasOwnProperty(prod)) {
                 let productHandler = new ProductHandler(product);
-                prodList.push(<div>{productHandler.getSymbolByCurrency(this.props.selectedCurrency)}{product.price[this.props.selectedCurrency]}</div>)
+                prodList.push(<div>{productHandler.getSymbolByCurrency(this.props.selectedCurrency)}{product.variants[0].price[this.props.selectedCurrency]}</div>)
             }
         }
 
