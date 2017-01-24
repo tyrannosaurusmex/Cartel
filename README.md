@@ -15,12 +15,3 @@ Ecommerce Template
 - `webpack`
 
 /assets/js/src -> /assets/js/dist
-
-# React Setup
-*Server Side*
-- Mega Menu Nav
-- User Config Dropdowns
-- Product Listings
-
-*Client Side*
-- Product Listings when reloaded due to state change
