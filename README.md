@@ -18,8 +18,5 @@ Ecommerce Template
 
 
 # Tidyup
-- Rename productListing Component names, variables and action types etc.
-- Tidy up ProductListing component to use correct React lifecycle methods
-- Create standard product model with varients
 - Create product listing URL convention
 - Add PropTypes to React Components
