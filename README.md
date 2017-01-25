@@ -19,4 +19,5 @@ Ecommerce Template
 
 # Tidyup
 - Create product listing URL convention
+- Redo mock data generator
 - Add PropTypes to React Components
