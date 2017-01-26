@@ -20,4 +20,17 @@ export default class ProductHandler {
         }
         return false;
     }
+    getLowestVariantPrice(currency) {
+        let lowestPrice = '';
+        for(let variant in this.data.variants) {
+            if(lowestPrice.length) {
+                if (lowestPrice > this.data.variants[variant].price[currency]) {
+                    lowestPrice = this.data.variants[variant].price[currency];
+                }   
+            } else {
+                lowestPrice = this.data.variants[variant].price[currency];
+            }
+        }
+        return lowestPrice;
+    }
 }

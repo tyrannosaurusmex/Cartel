@@ -1,3 +1,6 @@
 main {
-    @include flex(1);
+    width: calc(100% - 220px);
+    float: right;
+    box-sizing: border-box;
+    padding: $dim-std;
 }
