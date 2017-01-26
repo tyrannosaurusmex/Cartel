@@ -28,7 +28,7 @@ export default function reducer(
                 ...state,
                 fetching: false,
                 fetched: true,
-                products: action.payload.data.default
+                products: action.payload.data
             }
             break;
     }

@@ -1,4 +1,5 @@
 let newProductTemplate = {
+    id: 1000,
     brand_name: 'Artist Title',
     product_title: 'Album Title',
     production_date: 'Release Date',
