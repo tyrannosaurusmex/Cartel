@@ -12,7 +12,7 @@ export default class ProductPanel extends React.Component {
     render() {
         return <div className="ProductPanel">
             <img src="" className="productPanel-productImage" />
-            <p className="ProductPanel-productTitle">{this.props.productTitle}</p>
+            <p className="ProductPanel-productTitle">{this.props.brandName} - {this.props.productTitle}</p>
             <p className="ProductPanel-productPrice">{this.fromPrice}{this.props.productPriceSymbol}{this.props.productPrice}</p>
             <button className="Button">View</button>
         </div>;
