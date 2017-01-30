@@ -31,3 +31,30 @@
         color: $mid-light-grey;
     }
 }
+
+@media only screen and (max-width: 940px) {
+    .ProductPanel {
+        width: calc(100% - #{$dim-std-large});
+        height: auto;
+
+        .ProductPanel-productImage {
+            width: 200px;
+            float: left;
+            margin: 0 $dim-std 0 0;
+        }
+
+        .ProductPanel-productTitle {
+            width: calc(100% - (200px + #{$dim-std-large}));
+            font-size: 18px;
+            float: left;
+        }
+
+        .ProductPanel-productPrice {
+            float: left;
+            width: calc(100% - (200px + #{$dim-std-large}));
+            position: absolute;
+            left: 200px + $dim-std-large;
+            font-size: 22px;
+        }
+    }
+}
