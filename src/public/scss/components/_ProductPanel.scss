@@ -1,0 +1,33 @@
+.ProductPanel {
+    width: 300px;
+    height: 400px;
+    float: left;
+    margin: $dim-std;
+    padding: $dim-std;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.15);
+
+    .ProductPanel-productImage {
+        width: 100%;
+        margin-bottom: $dim-std-small;
+    }
+
+    .ProductPanel-button {
+        position: absolute;
+        bottom: $dim-std;
+        right: $dim-std;
+    }
+
+    .ProductPanel-productTitle {
+        color: $mid-light-grey;
+    }
+
+    .ProductPanel-productPrice {
+        position: absolute;
+        bottom: $dim-std + 5px;
+        left: $dim-std;
+        font-size: 18px;
+        color: $mid-light-grey;
+    }
+}

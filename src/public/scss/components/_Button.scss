@@ -1,0 +1,13 @@
+.Button {
+    padding: $dim-std-small $dim-std;
+    border-radius: 0;
+    border: none;
+    background: $dark-grey;
+    color: $white;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+        background: $mid-light-grey;
+    }
+}

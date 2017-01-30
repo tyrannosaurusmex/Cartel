@@ -11,10 +11,10 @@ export default class ProductPanel extends React.Component {
     }
     render() {
         return <div className="ProductPanel">
-            <img src="" className="productPanel-productImage" />
+            <img src="http://zumic.com/wp-content/uploads/2015/06/eagles-of-death-metal-zipper-down-album-cover-art-600x600.jpg" className="ProductPanel-productImage" />
             <p className="ProductPanel-productTitle">{this.props.brandName} - {this.props.productTitle}</p>
             <p className="ProductPanel-productPrice">{this.fromPrice}{this.props.productPriceSymbol}{this.props.productPrice}</p>
-            <button className="Button">View</button>
+            <button className="ProductPanel-button Button">View</button>
         </div>;
     }
 }
