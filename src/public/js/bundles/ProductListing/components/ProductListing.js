@@ -12,28 +12,25 @@ export default class ProductListing extends React.Component {
         this.props = data;
     }
     generateProductPanels() {
-        let prodList = [];
+        this.prodList = [];
         for (let prod in this.props.productListing) {
             if (this.props.productListing.hasOwnProperty(prod)) {
+
                 let thisProduct = this.props.productListing[prod],
                     productHandler = new ProductHandler(thisProduct),
                     displayPrice = productHandler.getLowestVariantPrice(this.props.selectedCurrency),
                     productPriceSymbol = productHandler.getSymbolByCurrency(this.props.selectedCurrency),
-                    fromPrice = '';
+                    fromPrice = false;
+
                 if (Salsa.objectLength(thisProduct.variants) > 1) {
-                    let fromPrice = <span className="ProductPanel-fromPrice">from </span>
+                    fromPrice = true;
                 }
-                prodList.push(<ProductPanel brandName={thisProduct.brand_name}
-                                            productTitle={thisProduct.product_title}
-                                            fromPrice={fromPrice}
-                                            productPrice={displayPrice}
-                                            productPriceSymbol={productPriceSymbol} />)
+                this.prodList.push(<ProductPanel brandName={thisProduct.brand_name} productTitle={thisProduct.product_title} fromPrice={fromPrice} productPrice={displayPrice} productPriceSymbol={productPriceSymbol} />)
             }
         }
-
-        return prodList;
     }
     render() {
-        return <div>{this.generateProductPanels()}</div>
+        this.generateProductPanels();
+        return <div>{this.prodList}</div>;
     }
 }
