@@ -17,7 +17,7 @@ export default class ProductListingContainer extends React.Component {
     constructor(data) {
         super(data);
         this.props = data;
-        this.props.dispatch(ProductListingActions.fetchProductListings());
+        this.props.dispatch(ProductListingActions.fetchProductListings(this.props.params.category, this.props.params.type));
     }
     render() {
         return <ProductListing productListing={this.props.productListing}

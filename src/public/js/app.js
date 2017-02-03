@@ -28,7 +28,7 @@ const rootDOM = document.getElementById('app');
 ReactDOM.render((
     <Provider store={store}>
         <Router history={history}>
-            <Route path="/format/vinyl" component={ProductListingContainer} />
+            <Route path="by/:category/:type" component={ProductListingContainer} />
         </Router>
     </Provider>
 ), rootDOM);

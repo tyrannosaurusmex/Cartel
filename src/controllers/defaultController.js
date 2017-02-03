@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    app.get('/format/:format', (req, res) => {
+    app.get('/by/:category/:type', (req, res) => {
         // Create server side React and pass through as variable
         res.status(200).render('pages/index');
     });
