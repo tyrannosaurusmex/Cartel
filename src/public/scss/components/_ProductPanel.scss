@@ -32,7 +32,7 @@
     }
 }
 
-@media only screen and (max-width: 940px) {
+@media only screen and (max-width: 960px) {
     .ProductPanel {
         width: calc(100% - #{$dim-std-large});
         height: auto;
