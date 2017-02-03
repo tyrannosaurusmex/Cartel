@@ -21,6 +21,7 @@ export default class ProductListingContainer extends React.Component {
     }
     render() {
         return <ProductListing productListing={this.props.productListing}
-                                selectedCurrency={this.props.selectedCurrency} />;
+                                selectedCurrency={this.props.selectedCurrency} 
+                                filterType={this.props.params.type}/>;
     }
 }

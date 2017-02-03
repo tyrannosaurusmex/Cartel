@@ -31,6 +31,9 @@ export default class ProductListing extends React.Component {
     }
     render() {
         this.generateProductPanels();
-        return <div>{this.prodList}</div>;
+        return <div>
+                    <h1>{Salsa.capitaliseString(this.props.filterType)} Releases</h1>
+                    {this.prodList}
+                </div>;
     }
 }
