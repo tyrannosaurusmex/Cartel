@@ -25,7 +25,7 @@ export default class ProductListing extends React.Component {
                 if (Salsa.objectLength(thisProduct.variants) > 1) {
                     fromPrice = true;
                 }
-                this.prodList.push(<ProductPanel productImage={thisProduct.product_images.main} brandName={thisProduct.brand_name} productTitle={thisProduct.product_title} fromPrice={fromPrice} productPrice={displayPrice} productPriceSymbol={productPriceSymbol} />)
+                this.prodList.push(<ProductPanel key={thisProduct.id} productImage={thisProduct.product_images.main} brandName={thisProduct.brand_name} productTitle={thisProduct.product_title} fromPrice={fromPrice} productPrice={displayPrice} productPriceSymbol={productPriceSymbol} />)
             }
         }
     }
