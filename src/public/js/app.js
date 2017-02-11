@@ -25,14 +25,14 @@ ReactDOM.render(<Provider store={store}>
 </Provider>, languageSelectorDOM);
 
 const megaMenuSelectorDOM = document.getElementById('MegaMenu-target');
-//ReactDOM.render(<MegaMenu />, megaMenuSelectorDOM);
+ReactDOM.render(<MegaMenu />, megaMenuSelectorDOM);
 
 const history = syncHistoryWithStore(browserHistory, store)
 const rootDOM = document.getElementById('app');
 ReactDOM.render((
     <Provider store={store}>
         <Router history={history}>
-            <Route path="by/:category/:type" component={ProductListingContainer} />
+            <Route path="/by/:category/:type" component={ProductListingContainer} />
         </Router>
     </Provider>
 ), rootDOM);
