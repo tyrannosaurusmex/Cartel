@@ -13,7 +13,8 @@
   },
   "scripts": {
     "start": "node dist/server.js",
-    "build": "babel src -d dist --ignore src/public/**"
+    "build": "babel src -d dist --ignore src/public/**",
+    "bundle" : "node_modules/.bin/webpack"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",

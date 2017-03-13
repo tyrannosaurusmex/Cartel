@@ -12,6 +12,7 @@ import * as ClassToggler from './modules/ClassToggler';
 import CurrencySelector from './bundles/UserOptions/components/CurrencySelector';
 import LanguageSelector from './bundles/UserOptions/components/LanguageSelector';
 import ProductListingContainer from './bundles/ProductListing/components/ProductListingContainer';
+import MegaMenu from './bundles/Navigation/components/MegaMenu';
 
 const currencySelectorDOM = document.getElementById('CurrencySelector');
 ReactDOM.render(<Provider store={store}>
