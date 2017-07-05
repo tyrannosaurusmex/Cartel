@@ -1,0 +1,7 @@
+.ProductFilter {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}

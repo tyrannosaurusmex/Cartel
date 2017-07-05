@@ -7,11 +7,37 @@ import store from './store';
 
 import Config from './Config';
 
-import * as ClassToggler from './modules/ClassToggler';
-
 import CurrencySelector from './bundles/UserOptions/components/CurrencySelector';
 import LanguageSelector from './bundles/UserOptions/components/LanguageSelector';
 import ProductListingContainer from './bundles/ProductListing/components/ProductListingContainer';
+
+import ClassToggler from './modules/ClassToggler';
+
+let ClassTogglerModules = {};
+ClassTogglerModules.NavCurrLangOptions = new ClassToggler({
+    trigger: 'NavCurrLangOptions-trigger',
+    target: 'NavCurrLangOptions-target',
+    triggerToggle: 'Nav_options_item-active',
+    targetToggle: 'Nav_currLangOptions-active',
+    outsideClear: true
+});
+
+ClassTogglerModules.NavSocial = new ClassToggler({
+    trigger: 'NavSocial-trigger',
+    target: 'NavSocial-target', 
+    triggerToggle: 'Nav_options_item-active',
+    targetToggle: 'Nav_social-active',
+    outsideClear: true
+});
+
+ClassTogglerModules.MegaMenu = new ClassToggler({
+    trigger: 'MegaMenu-trigger',
+    target: 'MegaMenu-target',
+    triggerToggle: 'Nav_menu_item-active',
+    targetToggle: 'MegaMenu-active',
+    outsideClear: true,
+    insideCloser: 'MegaMenu-closer'
+});
 
 const currencySelectorDOM = document.getElementById('CurrencySelector');
 ReactDOM.render(<Provider store={store}>

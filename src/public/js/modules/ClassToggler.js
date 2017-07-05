@@ -1,8 +1,6 @@
 import * as salsa from '../library/salsa';
 
-let ClassTogglerModules = {};
-
-class ClassToggler {
+export default class ClassToggler {
     constructor(options) {
         this.trigger = options.trigger;
         this.target = options.target;
@@ -55,40 +53,3 @@ class ClassToggler {
 
     }
 }
-
-// Class Toggler Initialise
-/*
-    trigger: the element being clicked
-    target: the element to be affected
-    triggerToggle: class name to add to trigger element
-    targetToggle: class name to add to the target element
-    outsideClear: remove class on outside click (excluding target element)
-    insideCloser: Remove class on click of child element
-*/
-
-ClassTogglerModules.NavCurrLangOptions = new ClassToggler({
-    trigger: 'NavCurrLangOptions-trigger',
-    target: 'NavCurrLangOptions-target',
-    triggerToggle: 'Nav_options_item-active',
-    targetToggle: 'Nav_currLangOptions-active',
-    outsideClear: true
-});
-
-ClassTogglerModules.NavSocial = new ClassToggler({
-    trigger: 'NavSocial-trigger',
-    target: 'NavSocial-target', 
-    triggerToggle: 'Nav_options_item-active',
-    targetToggle: 'Nav_social-active',
-    outsideClear: true
-});
-
-ClassTogglerModules.MegaMenu = new ClassToggler({
-    trigger: 'MegaMenu-trigger',
-    target: 'MegaMenu-target',
-    triggerToggle: 'Nav_menu_item-active',
-    targetToggle: 'MegaMenu-active',
-    outsideClear: true,
-    insideCloser: 'MegaMenu-closer'
-})
-
-export { ClassTogglerModules };
