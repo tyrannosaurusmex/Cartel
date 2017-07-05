@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
-import { syncHistoryWithStore } from 'react-router-redux'
+import { syncHistoryWithStore } from 'react-router-redux';
 import store from './store';
 
 import Config from './Config';
@@ -12,7 +12,6 @@ import * as ClassToggler from './modules/ClassToggler';
 import CurrencySelector from './bundles/UserOptions/components/CurrencySelector';
 import LanguageSelector from './bundles/UserOptions/components/LanguageSelector';
 import ProductListingContainer from './bundles/ProductListing/components/ProductListingContainer';
-import MegaMenu from './bundles/Navigation/components/MegaMenu';
 
 const currencySelectorDOM = document.getElementById('CurrencySelector');
 ReactDOM.render(<Provider store={store}>

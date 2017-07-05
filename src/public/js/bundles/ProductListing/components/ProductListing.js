@@ -4,6 +4,7 @@ import store from '../../../store';
 import * as Salsa from '../../../library/salsa';
 import ProductHandler from '../../../modules/ProductHandler';
 
+import ProductFilter from '../../ProductFilter/components/ProductFilterContainer';
 import ProductPanel from '../../ProductPanel/components/ProductPanel';
 
 export default class ProductListing extends React.Component {
@@ -32,6 +33,7 @@ export default class ProductListing extends React.Component {
     render() {
         this.generateProductPanels();
         return <div>
+                    <ProductFilter/>
                     <h1>{Salsa.capitaliseString(this.props.filterType)} Releases</h1>
                     {this.prodList}
                 </div>;
